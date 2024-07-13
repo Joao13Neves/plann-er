@@ -9,6 +9,7 @@ import { useState } from "react";
 
 export function App() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false);
+  const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false);
 
   function openGuestsInput() {
     setIsGuestsInputOpen(true);
@@ -17,7 +18,11 @@ export function App() {
   function closeGuestsInput() {
     setIsGuestsInputOpen(false);
   }
-  
+
+  function openGuestsModal() {
+    setIsGuestsModalOpen(true);
+  }
+
   return (
     <div className="h-screen flex items-center justify-center bg-pattern bg-no-repeat bg-center">
       <div className="max-w-3xl w-full px-6 text-center space-y-10 ">
@@ -53,7 +58,10 @@ export function App() {
             <div className="w-px h-6 bg-zinc-400" />
 
             {isGuestsInputOpen ? (
-              <button onClick={closeGuestsInput} className="bg-zinc-800 text-zinc-200 rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-zinc-700">
+              <button
+                onClick={closeGuestsInput}
+                className="bg-zinc-800 text-zinc-200 rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-zinc-700"
+              >
                 Alterar local/data
                 <Settings2 className="size-5" />
               </button>
@@ -70,14 +78,16 @@ export function App() {
 
           {isGuestsInputOpen && (
             <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
-              <div className="flex items-center gap-2 flex-1">
+              <button
+                type="button"
+                onClick={openGuestsModal}
+                className="flex items-center gap-2 flex-1"
+              >
                 <UserRoundPlus className="size-5 text-zinc-400" />
-                <input
-                  type="text"
-                  placeholder="Quem estará na viagem?"
-                  className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
-                />
-              </div>
+                <span className="text-lg text-zinc-400 flex-1 text-left">
+                  Quem estará na viagem?
+                </span>
+              </button>
 
               <div className="w-px h-6 bg-zinc-400" />
 
@@ -103,6 +113,12 @@ export function App() {
           .
         </p>
       </div>
+
+      {isGuestsModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-60">
+
+        </div>
+      )}
     </div>
   );
 }
