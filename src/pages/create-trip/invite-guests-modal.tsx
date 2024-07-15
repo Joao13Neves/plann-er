@@ -66,10 +66,10 @@ export function InviteGuestsModal({
             />
           </div>
 
-          <Button type="submit">
+          <button type="submit" className="bg-line-300 text-line-950 rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-line-400">
             Convidar
             <Plus className="size-5" />
-          </Button>
+          </button>
         </form>
       </div>
     </div>
