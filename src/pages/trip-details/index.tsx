@@ -205,7 +205,7 @@ export function TripDetailsPage() {
                 <div className="flex-1 h-14 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center gap-2">
                   <Calendar className="size-5 text-zinc-400" />
                   <input
-                    type="datatime-local"
+                    type="datetime-local"
                     name="occurs_at"
                     placeholder="Data e hora da atividade"
                     className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1 [color-scheme:dark]"
