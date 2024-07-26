@@ -28,7 +28,7 @@ export function DesatinationAndDateStep({
         <Calendar className="size-5 text-zinc-400" />
         <input
           disabled={isGuestsInputOpen}
-          type="text"
+          type="number"
           placeholder="Quando?"
           className="bg-transparent text-lg placeholder-zinc-400 w-40 outline-none"
         />
@@ -42,7 +42,7 @@ export function DesatinationAndDateStep({
           <Settings2 className="size-5" />
         </Button>
       ) : (
-        <Button variant="secondary" size="full" onClick={openGuestsInput}>
+        <Button variant="primary" size="default" onClick={openGuestsInput}>
           Continuar
           <ArrowRight className="size-5" />
         </Button>

@@ -33,7 +33,7 @@ export function InviteGuestsStep({
 
       <div className="w-px h-6 bg-zinc-400" />
 
-      <Button variant="secondary" onClick={openConfirmTripModal}>
+      <Button variant="primary" size="default" onClick={openConfirmTripModal}>
         Confirmar viagem
         <ArrowRight className="size-5" />
       </Button>
