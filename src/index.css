@@ -5,3 +5,52 @@
 * {
     min-width: 0;
 }
+
+input {
+    color-scheme: dark;
+}
+
+/*Estilizando o calendário da biblioteca DayPicker*/
+.rdp-range_start, .rdp-range_end {
+    background: #BEF264;
+}
+
+.rdp-range_start .rdp-day_button,
+.rdp-range_end .rdp-day_button,
+.rdp-range_middle .rdp-day_button {
+    background-color: #BEF264;
+    color: black;
+}
+
+.rdp-range_start {
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+
+.rdp-range_end {
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+.rdp-selected .rdp-day_button {
+    border: 2px solid #BEF264;
+    background-color: #BEF264;
+    color: black;
+}
+
+.rdp-range_middle {
+    background-color: #BEF264;
+}
+
+.rdp-range_middle .rdp-day_button {
+    font-weight: bold;
+}
+
+.rdp-chevron {
+    fill: #BEF264;
+}
+
+.rdp-today:not(.rdp-outside) {
+    color: #BEF264;
+}
+
