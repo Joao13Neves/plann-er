@@ -2,6 +2,7 @@ import { ArrowRight, Calendar, MapPin, Settings2, X } from "lucide-react";
 import { Button } from "../../../components/button";
 import { useState } from "react";
 import { DateRange, DayPicker } from "react-day-picker";
+import { format } from "date-fns";
 import "react-day-picker/style.css";
 
 interface DestinationAndDateStepProps {
@@ -28,8 +29,17 @@ export function DesatinationAndDateStep({
     setIsDatePickerOpen(false);
   }
 
+  const displayedDate =
+    eventStartAndEndDates &&
+    eventStartAndEndDates.from &&
+    eventStartAndEndDates.to
+      ? format(eventStartAndEndDates.from, "d' de 'LLL")
+          .concat(" até ")
+          .concat(format(eventStartAndEndDates.to, "d' de 'LLL"))
+      : null;
+
   return (
-    <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
+    <div className="w-[720px] h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
       <div className="flex items-center gap-2 flex-1">
         <MapPin className="size-5 text-zinc-400" />
         <input
@@ -43,10 +53,12 @@ export function DesatinationAndDateStep({
       <button
         onClick={openDatePicker}
         disabled={isGuestsInputOpen}
-        className="flex items-center gap-2 text-left"
+        className="w-[240px] flex items-center gap-2 text-left"
       >
         <Calendar className="size-5 text-zinc-400" />
-        <span className="text-lg text-zinc-400 w-40">Quando?</span>
+        <span className="text-lg text-zinc-400 w-60 flex-1">
+          {displayedDate || "Quando?"}
+        </span>
       </button>
 
       {isDatePickerOpen && (
@@ -61,6 +73,8 @@ export function DesatinationAndDateStep({
               </div>
             </div>
             <div className="my-day-picker">
+
+              //TODO: bloquear datas que já se passaram 
               <DayPicker
                 mode="range"
                 selected={eventStartAndEndDates}
