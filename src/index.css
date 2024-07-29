@@ -11,15 +11,20 @@ input {
 }
 
 /*Estilizando o calendário da biblioteca DayPicker*/
+:root {
+    --primary-color: #BEF264;
+    --text-color: #000;
+}
+
 .rdp-range_start, .rdp-range_end {
-    background: #BEF264;
+    background: var(--primary-color);
 }
 
 .rdp-range_start .rdp-day_button,
 .rdp-range_end .rdp-day_button,
 .rdp-range_middle .rdp-day_button {
-    background-color: #BEF264;
-    color: black;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .rdp-range_start {
@@ -33,13 +38,13 @@ input {
 }
 
 .rdp-selected .rdp-day_button {
-    border: 2px solid #BEF264;
-    background-color: #BEF264;
-    color: black;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .rdp-range_middle {
-    background-color: #BEF264;
+    background-color: var(--primary-color);
 }
 
 .rdp-range_middle .rdp-day_button {
@@ -47,10 +52,9 @@ input {
 }
 
 .rdp-chevron {
-    fill: #BEF264;
+    fill: var(--primary-color);
 }
 
 .rdp-today:not(.rdp-outside) {
-    color: #BEF264;
+    color: var(--primary-color);
 }
-

@@ -74,7 +74,7 @@ export function DesatinationAndDateStep({
             </div>
             <div className="my-day-picker">
 
-              //TODO: bloquear datas que já se passaram 
+              {/* TODO: bloquear datas que já se passaram  */}
               <DayPicker
                 mode="range"
                 selected={eventStartAndEndDates}
